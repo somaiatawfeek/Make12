@@ -1,0 +1,164 @@
+/* --- الألوان المتغيرة الأساسية لضمان التناسق --- */
+:root {
+    --accent-color: #2aa8a8; /* لون التركيز الرئيسي */
+    --heading-color: #3e5055; /* لون العناوين */
+    --default-color: #3d4348; /* لون النصوص العادية */
+    --surface-color: #ffffff; /* لون البطاقات والخلفيات الفاتحة */
+}
+
+/* ========================================================= */
+/* --- 1. أنماط الخلفية الثابتة (AI Background) --- */
+/* ========================================================= */
+body {
+    /* الخط */
+    font-family: 'Cairo', sans-serif;
+    
+    /* إعدادات الصورة كخلفية */
+    background-image: url('assets/img/background/ai_bg.jpg'); 
+    background-size: cover;          
+    background-repeat: no-repeat;    
+    background-attachment: fixed;    
+    background-position: center center; 
+    
+    min-height: 100vh;
+    background-color: transparent !important; /* لضمان ظهور الصورة */
+}
+
+/* طبقة تراكب شبه شفافة لتحسين وضوح المحتوى الأمامي */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* لون داكن مع شفافية متوسطة */
+    background-color: rgba(0, 0, 0, 0.6); 
+    z-index: -1;
+}
+
+/* ========================================================= */
+/* --- 2. أنماط بطاقة تسجيل الدخول (Form Card) --- */
+/* ========================================================= */
+
+.login-card-container {
+    max-width: 750px;
+    margin: 60px auto;
+    padding: 0;
+    border-radius: 15px;
+    overflow: hidden;
+    /* إظهار الخلفية جزئياً */
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    display: flex;
+    direction: rtl;
+    animation: fadeIn 1s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* القسم البصري الترويجي */
+.visual-promo {
+    width: 45%;
+    min-height: 480px;
+    background: linear-gradient(to top, var(--accent-color) 0%, #144d4d 100%);
+    color: #fff;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.visual-promo h3 { font-weight: 700; text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); }
+.promo-icon { font-size: 3rem; margin-bottom: 15px; color: #92e0e0; animation: pulse 2s infinite; }
+.promo-btn { background-color: var(--surface-color); color: var(--accent-color); border-radius: 50px; padding: 8px 25px; font-weight: 600; text-decoration: none; transition: all 0.3s;}
+.promo-btn:hover { background-color: #f0f0f0; transform: scale(1.05); }
+
+/* قسم النموذج */
+.form-section {
+    width: 55%;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.form-section h2 { color: var(--heading-color); font-weight: 700; }
+
+/* أنماط الحقول والأزرار */
+.form-control-auth {
+    border-radius: 5px;
+    height: 48px;
+    font-size: 1rem;
+    border-color: #ddd;
+    margin-bottom: 15px;
+    transition: border-color 0.3s;
+}
+
+.form-control-auth:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 0.25rem color-mix(in srgb, var(--accent-color), transparent 80%);
+}
+
+.btn-auth-submit {
+    background: var(--accent-color);
+    color: #fff;
+    border: none;
+    padding: 12px 0;
+    border-radius: 50px;
+    font-weight: 600;
+    width: 100%;
+    margin-top: 20px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn-auth-submit:hover {
+    background: #144d4d;
+    transform: translateY(-2px);
+}
+
+.text-accent { color: var(--accent-color) !important; }
+.text-accent-link { color: var(--accent-color); text-decoration: none; font-weight: 500; }
+.text-accent-link:hover { color: #144d4d; }
+.text-secondary-link { color: #4a8a8a; text-decoration: none; }
+.text-secondary-link:hover { color: #144d4d; }
+
+/* ========================================================= */
+/* --- 3. أنماط الهيدر والفوتر (للتناسق) --- */
+/* ========================================================= */
+
+.navbar { background-color: var(--surface-color) !important; }
+
+.main-footer {
+    background: linear-gradient(90deg, var(--accent-color) 60%, #218181 100%);
+    padding-top: 25px;
+    padding-bottom: 20px;
+}
+
+.footer-text { color: #e0f7f7; }
+.footer-link { color: #fff; text-decoration: underline; }
+
+/* ========================================================= */
+/* --- 4. استجابة الشاشات الصغيرة --- */
+/* ========================================================= */
+
+@media (max-width: 768px) {
+    .login-card-container { 
+        flex-direction: column; 
+        max-width: 95%; 
+        margin: 30px auto; 
+    }
+    .visual-promo, .form-section { 
+        width: 100%; 
+        min-height: auto; 
+        padding: 30px;
+    }
+    .visual-promo { 
+        order: -1; 
+    }
+}
