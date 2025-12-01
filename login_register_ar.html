@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>تسجيل الدخول / إنشاء حساب | مكسبو 2025</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;700&display=swap" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="assets/css/style_ar.css" />
+    
+    </head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg shadow" style="background-color: #ffffff !important;">
+        <div class="container-fluid">
+            <a class="navbar-brand me-auto" href="index.html">
+                <img src="assets/img/logo_dark.png" alt="مكسبو 2025" style="max-height: 40px;" />
+            </a>
+            <a href="main_ar.html" class="btn btn-sm" style="color: #2aa8a8;"><i class="fa fa-home me-2"></i> العودة للرئيسية</a>
+        </div>
+    </nav>
+    <div style="margin-top: 30px;"></div>
+
+    <main class="container" role="main">
+        <div class="auth-card-container">
+
+            <div class="visual-promo">
+                <i class="fa fa-lightbulb-o promo-icon"></i>
+                <h3>مرحباً بك في مجتمع مكسبو للمبتكرين!</h3>
+                <p class="lead">سجل الآن وابدأ رحلتك نحو الإبداع والمشاركة في أكبر حدث للابتكار.</p>
+                <ul class="list-unstyled text-start mt-4">
+                    <li><i class="fa fa-check-circle me-2"></i> تواصل مع المستثمرين</li>
+                    <li><i class="fa fa-check-circle me-2"></i> شارك في المسابقات</li>
+                    <li><i class="fa fa-check-circle me-2"></i> الوصول لورش العمل الحصرية</li>
+                </ul>
+            </div>
+
+            <div class="form-section">
+                
+                <ul class="nav nav-tabs justify-content-center mb-4" id="authTabs" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="login-tab" data-bs-toggle="tab" data-bs-target="#login-form" type="button" role="tab" aria-controls="login-form" aria-selected="true">
+                            تسجيل الدخول
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="register-tab" data-bs-toggle="tab" data-bs-target="#register-form" type="button" role="tab" aria-controls="register-form" aria-selected="false">
+                            حساب مبتكر جديد
+                        </button>
+                    </li>
+                </ul>
+
+                <div class="tab-content" id="authTabsContent">
+                    
+                    <div class="tab-pane fade show active" id="login-form" role="tabpanel" aria-labelledby="login-tab">
+                        <h4 class="text-center mb-4" style="color: #144d4d;">أدخل بياناتك للمتابعة</h4>
+                        <form action="forms/login.php" method="POST">
+                            <div class="mb-3">
+                                <label for="loginEmail" class="form-label">البريد الإلكتروني</label>
+                                <input type="email" class="form-control form-control-auth" id="loginEmail" name="email" required placeholder="ادخل بريدك الإلكتروني">
+                            </div>
+                            <div class="mb-3">
+                                <label for="loginPassword" class="form-label">كلمة المرور</label>
+                                <input type="password" class="form-control form-control-auth" id="loginPassword" name="password" required placeholder="*******">
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center mb-4">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="rememberMe" style="float: right; margin-right: -1.5rem;">
+                                    <label class="form-check-label" for="rememberMe" style="padding-right: 1.5rem;">تذكرني</label>
+                                </div>
+                                <a href="#" style="color: #2aa8a8;">نسيت كلمة المرور؟</a>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-auth-submit">تسجيل الدخول</button>
+                            <p class="text-center text-muted mt-3">
+                                ليس لديك حساب؟ <a href="#" onclick="document.getElementById('register-tab').click(); return false;">سجل الآن كمبتكر</a>
+                            </p>
+                        </form>
+                    </div>
+
+                    <div class="tab-pane fade" id="register-form" role="tabpanel" aria-labelledby="register-tab">
+                        <h4 class="text-center mb-4" style="color: #144d4d;">انضم إلينا كـ "مبتكر"</h4>
+                        <form action="forms/register_innovator.php" method="POST">
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="regName" class="form-label">الاسم الكامل</label>
+                                    <input type="text" class="form-control form-control-auth" id="regName" name="name" required placeholder="الاسم الأول والأخير">
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="regProject" class="form-label">اسم المشروع/الفكرة</label>
+                                    <input type="text" class="form-control form-control-auth" id="regProject" name="project_name" required placeholder="اسم فكرتك الابتكارية">
+                                </div>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="regEmail" class="form-label">البريد الإلكتروني</label>
+                                <input type="email" class="form-control form-control-auth" id="regEmail" name="email" required placeholder="example@domain.com">
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="regPassword" class="form-label">إنشاء كلمة مرور</label>
+                                <input type="password" class="form-control form-control-auth" id="regPassword" name="password" required placeholder="يجب أن تكون 8 أحرف على الأقل">
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label for="regCategory" class="form-label">مجال الابتكار</label>
+                                <select class="form-select form-control-auth" id="regCategory" name="category" required>
+                                    <option value="">اختر مجال ابتكارك</option>
+                                    <option value="tech">التقنية والبرمجة</option>
+                                    <option value="health">الصحة والطب</option>
+                                    <option value="green">الطاقة والبيئة</option>
+                                    <option value="edu">التعليم والتدريب</option>
+                                </select>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-auth-submit">تسجيل حسابي</button>
+                            <p class="text-center text-muted mt-3">
+                                بالتسجيل، أنت توافق على <a href="#">شروط الخدمة</a>.
+                            </p>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+            
+        </div>
+    </main>
+    <div style="margin-bottom: 50px;"></div>
+
+    <footer style="background: linear-gradient(90deg, #2aa8a8 60%, #218181 100%); padding-top: 25px; padding-bottom: 20px;">
+        <div class="container text-center">
+             <p class="mb-0" style="color: #e0f7f7;">
+                حقوق النشر 2025 | جميع الحقوق محفوظة - تصميم 
+                <a href="index.html" style="color: #fff; text-decoration: underline;">فريق مكسبو التقني</a>
+            </p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
